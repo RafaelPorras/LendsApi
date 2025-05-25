@@ -13,6 +13,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/lends', 'LendController@index');
+$router->post('/lends', 'LendController@store');
+$router->get('/lends/{id}', 'LendController@show');
+$router->put('/lends/{id}', 'LendController@update');
+$router->patch('/lends/{id}', 'LendController@update'); // Optional, if you want to allow partial updates
+$router->delete('/lends/{id}', 'LendController@destroy');

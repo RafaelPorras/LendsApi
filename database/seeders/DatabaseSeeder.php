@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Lend;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        Lend::factory()
+            ->count(20) // Create 20 lend records
+            ->create();
     }
 }
